@@ -1,2 +1,6 @@
 # MetPyLapseRates
-ATMO 5321 Cloud and Precipitation Physics class project to investigate a current open issue of MetPy. This repository looks at three different moist lapse rate formulas and their impact on a rising parcel.
+ATMO 5321 Cloud and Precipitation Physics class project to investigate a current open issue of MetPy. This repository addresses <a href="https://github.com/Unidata/MetPy/issues/434" target="_blank">issue #434</a>, looking at three different moist lapse rate formulas and their impact on a rising parcel. We explain the terms in each formula, what assumptions are made about retaining or precipitating the condensate, and offer two functions to be considered for inclusion in thermo.py: `moist_lapse_pseudoadiabatic` and `moist_lapse_reversible`.
+
+Formulations for liquid water mixing ratio and solid water (ice) mixing ratio, the former of which is needed for our function `moist_lapse_reversible`, have yet to be included in MetPy. See open <a href="https://github.com/Unidata/MetPy/issues/433" target="_blank">issue #433</a>. 
+
+The Jupyter notebook (extension .ipynb) should run without modification, after adding our two functions `moist_lapse_pseudoadiabatic` and `moist_lapse_reversible` to thermo.py, or simply replacing the current thermo.py file of MetPy with the version included in this repository. We have also made slight modifications to the documentation of `moist_lapse` to reference our new functions and mention the neglection of dimensionless parameter b.
